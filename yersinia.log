@@ -1,0 +1,122 @@
+# yersinia v0.8.2 started in emobilis-HP-Z240-SFF-Workstation on Thu Feb 12 16:40:04 2026
+
+Network Interface eno1
+
+ eno1 iflinkname EN10MB
+ eno1 iflinkdesc Ethernet
+ eno1 MAC = 1860.24ad.ee86
+Network Interface lo
+
+ lo iflinkname EN10MB
+ lo iflinkdesc Ethernet
+ lo MAC = 0000.0000.0000
+Network Interface bluetooth-monitor
+pcap_open_live failed: bluetooth-monito: No such device exists (No such device exists)
+Network Interface nflog
+Network Interface nfqueue
+Network Interface dbus-system
+Network Interface dbus-session
+pcap_open_live failed: dbus-session: Failed to get session bus: /usr/bin/dbus-launch terminated abnormally with the following error: Failed to waitpid() for babysitter intermediate process: No child processes
+
+
+ th_uptime thread = 4E0076C0
+
+ ncurses_gui_th = 1300260544
+ Error: I need at least 25 rows and 80 columns             for a proper display!!
+
+ ncurses_gui_th_exit start...
+ ncurses_gui_th_exit finish...
+ g00dbye function called from 4EE13800
+
+ ints_destroy started...
+ ints_destroy killing pcap_listener(1317045952)...
+
+ thread_destroy 4EE13800 destroying 4E8086C0...
+ thread_destroy 4EE13800 after PTHREAD_JOIN 4E8086C0...
+ ints_destroy finished...
+ Showing MOTD..
+# yersinia finished on Thu Feb 12 16:40:06 2026
+
+# yersinia v0.8.2 started in emobilis-HP-Z240-SFF-Workstation on Thu Feb 12 16:40:22 2026
+
+Network Interface eno1
+
+ eno1 iflinkname EN10MB
+ eno1 iflinkdesc Ethernet
+ eno1 MAC = 1860.24ad.ee86
+Network Interface lo
+
+ lo iflinkname EN10MB
+ lo iflinkdesc Ethernet
+ lo MAC = 0000.0000.0000
+Network Interface bluetooth-monitor
+pcap_open_live failed: bluetooth-monito: No such device exists (No such device exists)
+Network Interface nflog
+Network Interface nfqueue
+Network Interface dbus-system
+Network Interface dbus-session
+pcap_open_live failed: dbus-session: Failed to get session bus: /usr/bin/dbus-launch terminated abnormally with the following error: Failed to waitpid() for babysitter intermediate process: No child processes
+
+
+ th_uptime thread = B4E026C0
+
+ ncurses_gui_th = -1268771136
+ Error: I need at least 25 rows and 80 columns             for a proper display!!
+
+ ncurses_gui_th_exit start...
+ ncurses_gui_th_exit finish...
+ g00dbye function called from B5604800
+
+ ints_destroy started...
+ ints_destroy killing pcap_listener(-1251985728)...
+
+ thread_destroy B5604800 destroying B56036C0...
+ thread_destroy B5604800 after PTHREAD_JOIN B56036C0...
+ ints_destroy finished...
+ Showing MOTD..
+# yersinia finished on Thu Feb 12 16:40:59 2026
+
+# yersinia v0.8.2 started in emobilis-HP-Z240-SFF-Workstation on Thu Feb 12 16:41:01 2026
+
+Network Interface eno1
+
+ eno1 iflinkname EN10MB
+ eno1 iflinkdesc Ethernet
+ eno1 MAC = 1860.24ad.ee86
+Network Interface lo
+
+ lo iflinkname EN10MB
+ lo iflinkdesc Ethernet
+ lo MAC = 0000.0000.0000
+Network Interface bluetooth-monitor
+pcap_open_live failed: bluetooth-monito: No such device exists (No such device exists)
+Network Interface nflog
+Network Interface nfqueue
+Network Interface dbus-system
+Network Interface dbus-session
+pcap_open_live failed: dbus-session: Failed to get session bus: /usr/bin/dbus-launch terminated abnormally with the following error: Failed to waitpid() for babysitter intermediate process: No child processes
+
+
+ th_uptime thread = 7D5EB6C0
+
+ th_tty_peer thread = 2094966464...
+Entering command line mode...
+ attack_launch: 7CDEA6C0 Attack thread 77FFF6C0 is born!!
+
+ thread_destroy 7CDEA6C0 destroying 77FFF6C0...
+ attack_th_exit -> attack_th.stop=1   attack_th.id=77FFF6C0....
+ attack_th_exit: 77FFF6C0 finished
+ thread_destroy 7CDEA6C0 after PTHREAD_JOIN 77FFF6C0...
+
+ th_tty_peer 2094966464 finished...
+ g00dbye function called from 7DDED800
+
+ ints_destroy started...
+ ints_destroy killing pcap_listener(2111751872)...
+
+ thread_destroy 7DDED800 destroying 7DDEC6C0...
+ thread_destroy 7DDED800 after PTHREAD_JOIN 7DDEC6C0...
+ ints_destroy finished...
+ Showing MOTD..
+# yersinia finished on Thu Feb 12 16:42:49 2026
+

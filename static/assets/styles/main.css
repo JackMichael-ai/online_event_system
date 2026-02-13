@@ -1,0 +1,64 @@
+/* Entrance Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.event-card-animate { animation: fadeInUp 0.6s ease-out forwards; }
+
+.animate-item {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Stagger delays */
+.animate-item:nth-child(1) { animation-delay: 0.1s; }
+.animate-item:nth-child(2) { animation-delay: 0.2s; }
+.animate-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Interactive Elements */
+.custom-input {
+    border: 2px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 5px 15px rgba(13,110,253,0.1);
+    transform: translateY(-1px);
+}
+
+.preview-card {
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+}
+
+.preview-card:hover { transform: translateY(-5px); }
+/* Table specific refinements */
+.table thead th {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6c757d;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8faff !important;
+}
+
+/* Rounding the table container */
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Soft badges for locations */
+.badge.bg-light {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+}
