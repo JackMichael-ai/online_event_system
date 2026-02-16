@@ -6,6 +6,7 @@
     <title>Dashboard | TECHCORP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
     <style>
         /* Shared Animations */
         @keyframes fadeInUp {
@@ -15,17 +16,44 @@
         .animate-item { animation: fadeInUp 0.6s ease-out forwards; }
         .event-card-animate { animation: fadeInUp 0.8s ease-out forwards; }
 
-        /* Classy Stat Cards */
+        /* Classy Component Styling */
         .card { border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 1rem 3rem rgba(0,0,0,0.1) !important; }
 
-        /* Subtle Backgrounds */
+        /* Subtle Backgrounds & Colors */
         .bg-primary-subtle { background-color: rgba(13, 110, 253, 0.1); }
         .bg-success-subtle { background-color: rgba(25, 135, 84, 0.1); }
         .bg-info-subtle { background-color: rgba(13, 202, 240, 0.1); }
         .bg-warning-subtle { background-color: rgba(255, 193, 7, 0.1); }
         
         .extra-small { font-size: 0.75rem; }
+        .table thead th { font-size: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase; }
+
+        /* Custom Action Buttons */
+        .btn-action {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .btn-action:hover { transform: scale(1.1); }
+        
+        /* Timeline styling */
+        .timeline-item { position: relative; padding-left: 20px; }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 15px;
+            bottom: -25px;
+            width: 1px;
+            background-color: #dee2e6;
+        }
+        .timeline-item:last-child::before { display: none; }
     </style>
 </head>
 <body class="bg-light">
@@ -34,11 +62,11 @@
     <div class="row mb-5 animate-item">
         <div class="col-md-8">
             <h2 class="fw-bold text-dark">Welcome back, Alex</h2>
-            <p class="text-muted">Here's a snapshot of your event performance for February 2026.</p>
+            <p class="text-muted">You have 3 active events requiring your attention today.</p>
         </div>
         <div class="col-md-4 text-md-end">
             <button class="btn btn-white shadow-sm border rounded-pill px-4 me-2">Download Report</button>
-            <a href="event_details.html" class="btn btn-primary rounded-pill px-4">Create Event</a>
+            <a href="event_details.html" class="btn btn-primary rounded-pill px-4 shadow">Create Event</a>
         </div>
     </div>
 
@@ -90,18 +118,109 @@
     </div>
 
     <div class="row g-4 animate-item">
+        
         <div class="col-lg-8">
-            <div class="card border-0 shadow-sm p-4 h-100">
+            <div class="card border-0 shadow-sm p-4 h-100 d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h5 class="fw-bold mb-0">Registration Trends</h5>
-                    <select class="form-select form-select-sm w-auto border-0 bg-light">
-                        <option>Last 7 Days</option>
-                        <option>Last 30 Days</option>
-                    </select>
+                    <h5 class="fw-bold mb-0">Scheduled Events</h5>
+                    <button class="btn btn-link btn-sm text-decoration-none text-primary fw-bold">View Full List</button>
                 </div>
-                <div class="bg-light rounded-4 d-flex flex-column align-items-center justify-content-center" style="height: 300px; border: 2px dashed #dee2e6;">
-                    <i class="bi bi-graph-up text-muted display-4 mb-2"></i>
-                    <p class="text-muted small">Chart.js dynamic visualization will render here.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="border-0 text-muted py-3">Event Details</th>
+                                <th class="border-0 text-muted py-3">Capacity</th>
+                                <th class="border-0 text-muted py-3">Status</th>
+                                <th class="border-0 text-muted py-3 text-end">Manage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-3">
+                                    <div class="fw-bold text-dark">Global AI Summit 2026</div>
+                                    <div class="extra-small text-muted"><i class="bi bi-calendar3 me-1"></i>Oct 12, 2026</div>
+                                </td>
+                                <td>
+                                    <div class="progress mb-1" style="height: 6px; width: 100px;">
+                                        <div class="progress-bar bg-primary" style="width: 85%"></div>
+                                    </div>
+                                    <span class="extra-small text-muted">85% Filled</span>
+                                </td>
+                                <td><span class="badge bg-success-subtle text-success rounded-pill px-3">Live</span></td>
+                                <td class="text-end">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button class="btn btn-action bg-info-subtle text-info border-0" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                        <button class="btn btn-action bg-danger-subtle text-danger border-0" title="Delete"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3">
+                                    <div class="fw-bold text-dark">Cyber-Security Expo</div>
+                                    <div class="extra-small text-muted"><i class="bi bi-calendar3 me-1"></i>Nov 05, 2026</div>
+                                </td>
+                                <td>
+                                    <div class="progress mb-1" style="height: 6px; width: 100px;">
+                                        <div class="progress-bar bg-primary" style="width: 40%"></div>
+                                    </div>
+                                    <span class="extra-small text-muted">40% Filled</span>
+                                </td>
+                                <td><span class="badge bg-success-subtle text-success rounded-pill px-3">Live</span></td>
+                                <td class="text-end">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button class="btn btn-action bg-info-subtle text-info border-0" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                        <button class="btn btn-action bg-danger-subtle text-danger border-0" title="Delete"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3">
+                                    <div class="fw-bold text-dark">UX/UI Design Night</div>
+                                    <div class="extra-small text-muted"><i class="bi bi-calendar3 me-1"></i>Dec 15, 2026</div>
+                                </td>
+                                <td>
+                                    <div class="progress mb-1" style="height: 6px; width: 100px;">
+                                        <div class="progress-bar bg-warning" style="width: 10%"></div>
+                                    </div>
+                                    <span class="extra-small text-muted">10% Filled</span>
+                                </td>
+                                <td><span class="badge bg-warning-subtle text-warning rounded-pill px-3">Draft</span></td>
+                                <td class="text-end">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button class="btn btn-action bg-info-subtle text-info border-0" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                        <button class="btn btn-action bg-danger-subtle text-danger border-0" title="Delete"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        <tr>
+                                <td class="py-3">
+                                    <div class="fw-bold text-dark">Global Entrepreneur and AI Synergy Expo</div>
+                                    <div class="extra-small text-muted"><i class="bi bi-calendar3 me-1"></i>Oct 12, 2026</div>
+                                </td>
+                                <td>
+                                    <div class="progress mb-1" style="height: 6px; width: 100px;">
+                                        <div class="progress-bar bg-primary" style="width: 85%"></div>
+                                    </div>
+                                    <span class="extra-small text-muted">85% Filled</span>
+                                </td>
+                                <td><span class="badge bg-success-subtle text-success rounded-pill px-3">Live</span></td>
+                                <td class="text-end">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button class="btn btn-action bg-info-subtle text-info border-0" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                        <button class="btn btn-action bg-danger-subtle text-danger border-0" title="Delete"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-auto pt-4 border-top">
+                    <a href="index.html" class="btn btn-outline-secondary rounded-pill px-4 btn-sm">
+                        <i class="bi bi-arrow-left me-2"></i>Back
+                    </a>
                 </div>
             </div>
         </div>
@@ -109,77 +228,41 @@
         <div class="col-lg-4">
             <div class="card border-0 shadow-sm p-4 h-100">
                 <h5 class="fw-bold mb-4">Activity Feed</h5>
-                <div class="timeline">
-                    <div class="d-flex gap-3 mb-4">
-                        <div class="bg-primary rounded-circle" style="width: 10px; height: 10px; margin-top: 6px; flex-shrink: 0;"></div>
+                <div class="timeline ps-2">
+                    <div class="timeline-item d-flex gap-3 mb-4">
+                        <div class="bg-primary rounded-circle shadow-sm" style="width: 10px; height: 10px; margin-top: 6px; flex-shrink: 0; z-index: 2;"></div>
                         <div>
                             <p class="mb-0 small fw-bold">New registration: Global AI Summit</p>
                             <span class="text-muted extra-small">Just now</span>
                         </div>
                     </div>
-                    <div class="d-flex gap-3 mb-4">
-                        <div class="bg-warning rounded-circle" style="width: 10px; height: 10px; margin-top: 6px; flex-shrink: 0;"></div>
+                    <div class="timeline-item d-flex gap-3 mb-4">
+                        <div class="bg-warning rounded-circle shadow-sm" style="width: 10px; height: 10px; margin-top: 6px; flex-shrink: 0; z-index: 2;"></div>
                         <div>
                             <p class="mb-0 small fw-bold">Venue Update: UX Night Austin</p>
                             <span class="text-muted extra-small">45 mins ago</span>
                         </div>
                     </div>
-                    <div class="d-flex gap-3">
-                        <div class="bg-success rounded-circle" style="width: 10px; height: 10px; margin-top: 6px; flex-shrink: 0;"></div>
-                        <div>
-                            <p class="mb-0 small fw-bold">Payout of $2,400 processed</p>
-                            <span class="text-muted extra-small">2 hours ago</span>
-                        </div>
-                    </div>
                 </div>
-                <button class="btn btn-light btn-sm w-100 mt-auto rounded-pill py-2">View All Activity</button>
+                <button class="btn btn-light btn-sm w-100 mt-auto rounded-pill py-2 text-muted fw-bold">Clear All History</button>
             </div>
         </div>
     </div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<footer class="bg-dark text-white pt-5 pb-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold mb-4 text-primary">TECHCORP</h5>
-        <p class="small text-secondary">
-          Building the future of digital infrastructure since 2010. We specialize in scalable solutions for the modern enterprise.
-        </p>
-      </div>
-
-      <div class="col-md-2 offset-md-1 mb-4">
-        <h6 class="text-uppercase fw-bold mb-4 small">Company</h6>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">About Us</a></li>
-          <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Careers</a></li>
-          <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Press</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-2 mb-4">
-        <h6 class="text-uppercase fw-bold mb-4 small">Follow Us</h6>
-        <div class="d-flex gap-3">
-          <a href="#" class="text-secondary fs-5"><i class="bi bi-linkedin"></i></a>
-          <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
-        </div>
-      </div>
+<footer class="bg-dark text-white pt-5 pb-4 mt-5">
+  <div class="container text-center">
+    <h5 class="fw-bold mb-3 text-primary">TECHCORP</h5>
+    <p class="small text-secondary mb-4">Advancing digital infrastructure with precision and care.</p>
+    <div class="d-flex justify-content-center gap-3 mb-4">
+        <a href="#" class="text-secondary"><i class="bi bi-linkedin fs-5"></i></a>
+        <a href="#" class="text-secondary"><i class="bi bi-twitter-x fs-5"></i></a>
     </div>
-
-    <hr class="my-4 border-secondary opacity-25">
-
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center text-md-start">
-        <p class="small text-secondary mb-0">&copy; 2026 TECHCORP Inc. All rights reserved.</p>
-      </div>
-      <div class="col-md-6 text-center text-md-end">
-        <a href="#" class="text-secondary text-decoration-none small me-3">Privacy Policy</a>
-        <a href="#" class="text-secondary text-decoration-none small">Terms of Service</a>
-      </div>
-    </div>
+    <hr class="border-secondary opacity-25 w-50 mx-auto">
+    <p class="small text-secondary mt-3">© 2026 TECHCORP Inc. All rights reserved.</p>
   </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
