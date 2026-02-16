@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62c442a3-ec36-45de-977c-b9dea19c4f02" name="Changes" comment="update on the about page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="62c442a3-ec36-45de-977c-b9dea19c4f02" name="Changes" comment="update on the event details and as well as adding footers to all pages">
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/online_event_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/online_event_system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/event_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -143,7 +146,7 @@
       <workItem from="1770981724336" duration="5647000" />
       <workItem from="1771220907074" duration="1067000" />
       <workItem from="1771229908269" duration="514000" />
-      <workItem from="1771240797767" duration="2690000" />
+      <workItem from="1771240797767" duration="3045000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -169,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771242650784</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update on the event details and as well as adding footers to all pages">
+      <option name="closed" value="true" />
+      <created>1771243542494</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1771243542494</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +233,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="update on the home page" />
     <MESSAGE value="update on the about page" />
-    <option name="LAST_COMMIT_MESSAGE" value="update on the about page" />
+    <MESSAGE value="update on the event details and as well as adding footers to all pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="update on the event details and as well as adding footers to all pages" />
   </component>
 </project>
