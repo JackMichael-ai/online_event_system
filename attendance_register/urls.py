@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path
 from attendance_register import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('about/',views.index,name='about'),
     path('home/',views.home,name='home'),
     path('event_details/',views.event_details,name='event_details'),
